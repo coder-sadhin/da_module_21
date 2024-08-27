@@ -81,7 +81,17 @@ void level_order(Node *root)
             q.push(f->right);
     }
 }
-
+bool search(Node *root, int x)
+{
+    if (root == NULL)
+        return false;
+    if (root->val == x)
+        return true;
+    if (x < root->val)
+        return search(root->left, x);
+    else
+        return search(root->right, x);
+}
 int main()
 {
     Node *root = input_tree();
