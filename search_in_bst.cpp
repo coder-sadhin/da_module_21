@@ -56,7 +56,31 @@ Node *input_tree()
     }
     return root;
 }
+void level_order(Node *root)
+{
+    if (root == NULL)
+    {
+        cout << "Tree nai" << endl;
+        return;
+    }
+    queue<Node *> q;
+    q.push(root);
+    while (!q.empty())
+    {
+        // 1. ber kore ana
+        Node *f = q.front();
+        q.pop();
 
+        // 2. jabotiyo ja kaj ache
+        cout << f->val << " ";
+
+        // 3. tar children gulo ke rakha
+        if (f->left)
+            q.push(f->left);
+        if (f->right)
+            q.push(f->right);
+    }
+}
 
 int main()
 {
