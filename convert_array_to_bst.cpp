@@ -25,7 +25,17 @@ Node *convert(int a[], int n, int l, int r)
     root->right = rootRight;
     return root;
 }
-
+void level_order(Node *root)
+{
+    if (root == NULL)
+    {
+        cout << "Tree nai" << endl;
+        return;
+    }
+    queue<Node *> q;
+    q.push(root);
+    
+}
 int main()
 {
     int n;
